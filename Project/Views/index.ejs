@@ -1,0 +1,269 @@
+<%- include ('partials/header.ejs') %>
+
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    
+    
+    
+    <div id='home'>
+        <div class="landing-text">
+            <%- include ('partials/flashmsg.ejs') %>
+
+            <h2>Mês de <%= mesNome %></h2>
+            
+            <span>R$ <%= total %></span>
+            
+            <div class="positivo-box">
+                <div class="positivo-texto">Entradas</div>
+                <div class="positivo-valor">+<span><%= entrada %></span></div>
+            </div>
+            
+            <div class="negativo-box">
+                <div class="negativo-texto">Saidas</div>
+                <div class="negativo-valor">-<span><%= saida %></span></div>
+                <div class="negativo-porcentagem"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="card-body">
+
+        <!-- form input -->
+        <form action='/adicionarItem' method="POST">
+            <div class="row">
+                <div class="col">
+                    <input name="valor" type="number" step="any" min="0" class="form-control" placeholder="Valor" required>
+                </div>
+                <div class="col">
+                    <input name="data" type="date" class="form-control" placeholder="Data" required>
+                </div>
+            </div>
+
+            <input name="descricao" type="text" class="form-control mt-2" placeholder="Descricao" required>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <select name="tipo" class="custom-select" required>
+                        <option>Entrada</option>
+                        <option>Saida</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-info">Adicionar Item </button>
+                </div>
+            </div>
+            
+        </form>
+        <hr>
+
+        <!-- escolher mes -->
+        <div class="container-mes mt-5" style="text-align: center;">
+
+            <form action="/month" onchange="changeValues(event, this)">
+                <input name="mesEscolhido" id="mesEscolhido"  value="<%= mes %>" type="month">
+            </form>
+            
+        </div>
+
+        
+
+        <!-- table dos dados -->
+        <div class="container-wrap mt-5 ">
+
+            <div class="container-entrada mt-4">
+                <p class="text-info">Entradas</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th scope="col">Descricao</th>
+                            <th scope="col">Valor (R$)</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <% dados.forEach( dado => { %>
+                            
+                            <% if(dado.tipo == 1) { %>
+                                <tr>
+                                    <td> <%= dado.data%> </td>
+                                    <td> <%= dado.descricao%> </td>
+                                    <td> <%= dado.valor %> </td>
+                                    <td style="display: flex;">
+                                        
+                                        <!-- Button trigger modal -->
+                                        <button style="margin-right: 10px;" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal<%= dado.id %>"> Editar </button>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal<%= dado.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Editar Item</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <form action='/editarItem' method="POST">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <input type="hidden" value="<%= dado.id %>" name="idModal">
+                                                                <input value="<%= dado.valor %>" name="valorModal" type="number" step="any" min="0" class="form-control" placeholder="Valor" required>
+                                                            </div>
+                                                            <div class="col">
+                                                                <input value="<%= dado.data%>" name="dataModal" type="date" class="form-control" placeholder="Data" required>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <input value="<%= dado.descricao %>" name="descricaoModal" type="text" class="form-control mt-2" placeholder="Descricao" required>
+                                            
+                                                        <div class="row mt-2">
+                                                            <div class="col">
+                                                                <select name="tipoModal" class="custom-select" required>
+                                                                    <option>Entrada</option>
+                                                                    <option>Saida</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+
+                                                        <button type="s" class="btn btn-info">Salvar mudanças</button> 
+
+                                                        <button style="float: right; margin-right: 10px;" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                        
+                                                        
+                                                    </form>
+
+                                                </div>
+
+                                            </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <form action="/deletarItem" method="POST"  onsubmit="confirmDel(event, this)">
+                                            <input type="hidden" name="id" value="<%= dado.id%>">
+                                            <button value="<%= dado.id %>" class="btn btn-danger btn-sm"> Excluir </button>
+                                        </form>
+                                        
+                                    </td>
+                                </tr>
+
+                            <% } %>
+
+                        <% }) %>
+                        
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            <div class="container-saida mt-4">
+                <p class="text-danger">Saidas</p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Descricao</th>
+                            <th scope="col">Valor (R$)</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <% dados.forEach( dado => { %>
+                            
+                            <tr>
+                                <% if(dado.tipo == 0) { %>
+                                
+                                    <td> <%= dado.data%> </td>
+                                    <td> <%= dado.descricao%> </td>
+                                    <td> <%= dado.valor %> </td>
+
+                                    <td style="display: flex;">
+                                        
+                                        <!-- Button trigger modal -->
+                                        <button style="margin-right: 10px;" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal<%= dado.id %>"> Editar </button>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal<%= dado.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Editar Item</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <form action='/editarItem' method="POST">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <input type="hidden" value="<%= dado.id %>" name="idModal">
+                                                                <input value="<%= dado.valor %>" name="valorModal" type="number" step="any" min="0" class="form-control" placeholder="Valor" required>
+                                                            </div>
+                                                            <div class="col">
+                                                                <input value="<%= dado.data%>" name="dataModal" type="date" class="form-control" placeholder="Data" required>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <input value="<%= dado.descricao %>" name="descricaoModal" type="text" class="form-control mt-2" placeholder="Descricao" required>
+                                            
+                                                        <div class="row mt-2">
+                                                            <div class="col">
+                                                                <select name="tipoModal" class="custom-select" required>
+                                                                    <option>Entrada</option>
+                                                                    <option selected>Saida</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+
+                                                        <button type="s" class="btn btn-info">Salvar mudanças</button> 
+
+                                                        <button style="float: right; margin-right: 10px;" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                        
+                                                        
+                                                    </form>
+
+                                                </div>
+
+                                            </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <form action="/deletarItem" method="POST" onsubmit="confirmDel(event, this)">
+                                            <input type="hidden" name="id" value="<%= dado.id%>">
+                                            <button  type="submit" value="<%= dado.id %>" class="btn btn-danger btn-sm"> Excluir </button>
+                                        </form>
+                                    </td>
+
+                                <% } %>
+                            </tr>
+
+                        <% }) %>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+    <script src="/js/javascript.js"></script>
+
+
+<%- include ('partials/footer.ejs')  %>
+    

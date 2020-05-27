@@ -1,0 +1,45 @@
+<%- include ('partials/header.ejs') %>
+
+<body>
+    <%- include ('partials/navbar.ejs') %>
+
+    
+    <div id='home'>
+        <div class="landing-text">
+
+            <% erros.forEach( erro => { %>
+
+                <div class="alert alert-danger mt-4"> <%= erro.texto %> </div>
+
+            <% }) %>
+
+            <h2>Registrar</h2>
+            <br>
+
+            <div class="content-login">
+                <div id='card-body' class="card-body">
+
+                    <form action="/register" method="POST" class="login-form">
+                        <input name="nome" type="text" class="form-control" placeholder="Nome..." required> <br>
+
+                        <input name="email" type="email" class="form-control" placeholder="Email..." required> <br>
+
+                        <input name="password" type="password" class="form-control mt-2" placeholder="Password..." required><br>
+
+                        <input name="confirmpassword" type="password" class="form-control mt-2" placeholder="Confirm Password..." required><br>
+                        
+                        <button class="btn btn-primary btn-lg mt-3">Registrar</button>
+                    </form>
+                    
+                </div>
+            </div>
+                
+        </div>
+    </div>
+    
+
+</div>
+
+
+</body>
+<%- include ('partials/footer.ejs')  %>

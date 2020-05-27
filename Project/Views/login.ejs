@@ -1,0 +1,36 @@
+<%- include ('partials/header.ejs') %>
+
+<body>
+    <%- include ('partials/navbar.ejs') %>
+
+    
+    
+    <div id='home'>
+        
+        <div class="landing-text">
+            <%- include ('partials/flashmsg.ejs') %>
+            <br>
+            <h2>Login</h2>
+            <br>
+
+            <div class="content-login">
+                <div id='card-body' class="card-body">
+
+                    <form action="/login" method="POST" class="login-form">
+                        <input name="email" type="email" class="form-control" placeholder="Email..." required> <br>
+                        <input name="password" type="password" class="form-control mt-2" placeholder="Password..." required><br>
+                        <button class="btn btn-primary btn-lg mt-3">Login</button>
+                    </form>
+                    
+                </div>
+            </div>
+                
+        </div>
+    </div>
+    
+
+</div>
+
+
+</body>
+<%- include ('partials/footer.ejs')  %>
