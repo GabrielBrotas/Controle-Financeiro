@@ -42,6 +42,8 @@ const dashboardRouter = require('./classRouters/dashboardRouter')
 
     router.get('/dashboard', isAuth, dashboardRouter.dashboardGeral)
 
+    // router.get('/dashboard/year', isAuth, dashboardRouter.dashboardYear)
+
     router.get('/historico', isAuth, historicoRouter.historico)
 
 

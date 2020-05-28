@@ -32,10 +32,20 @@
 
     <div class="card-body">
 
+        <div class="container-mes mt-5" style="text-align: center;">
+
+            <h5>Filtro:</h5>
+            <form action="/dashboard" onchange="changeYear(event, this)">
+                <input id="ano" name="ano" type="number" min="1900" max="2099" step="1" value="<%=ano%>">
+
+            </form>
+            
+        </div>
+
         <input type="hidden" id="entradasArray" value="<%= entradasArray %>">
         <input type="hidden" id="saidasArray" value="<%= saidasArray %>">
 
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart" class="mt-4"></canvas>
 
     </div>
 
@@ -60,6 +70,8 @@
 
         arraySaidas = []
         saidas = document.getElementById('saidasArray').value
+
+        let ano = document.getElementById('ano').value
 
         for( let i = 0; i <= 11; i++){
             arrayEntradas.push( entradas.split(',')[i])
@@ -92,7 +104,7 @@
                 title:{
                     display: true,
                     fontSize: 20,
-                    text: 'Relatorio de 2020'
+                    text: 'Relatorio de ' + ano
                 },
                 labels: {
                     fontStyle: "bold"

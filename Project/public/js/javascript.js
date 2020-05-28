@@ -18,7 +18,13 @@ function confirmDel(event, form){
 }
 
 
-function changeValues(event, form) {
+function changeMonth(event, form) {
     
     form.submit('/month')
+}
+
+function changeYear(event, form) {
+    
+    form.submit('/dashboard')
+
 }
