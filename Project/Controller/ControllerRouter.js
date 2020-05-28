@@ -17,8 +17,6 @@ const dashboardRouter = require('./classRouters/dashboardRouter')
     
     router.get('/', isAuth, indexRouter.index) // rota de inicio
 
-    router.get('/month', indexRouter.month)// mostrar pelo mes
-
     router.get('/login', (req, res) => { // login view
         res.render('login')
     })
@@ -41,8 +39,6 @@ const dashboardRouter = require('./classRouters/dashboardRouter')
     router.post('/editarItem', itensRouter.editarItem) // editar item
 
     router.get('/dashboard', isAuth, dashboardRouter.dashboardGeral)
-
-    // router.get('/dashboard/year', isAuth, dashboardRouter.dashboardYear)
 
     router.get('/historico', isAuth, historicoRouter.historico)
 
