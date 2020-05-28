@@ -1,16 +1,33 @@
 # Gestao Financeira
 Web app para controle e gestao de financas
 
-
-imagem do projeto
-
 ## Sumario
 
 ## Sobre o projeto
+    Projeto desenvolvido para as pessoas terem maior controle financeiro de qualquer lugar. Neste applicativo o usuario cadastrado vai poder inserir ganhos e gastos do seu dia a dia e poder acompanhar seu historico, dashboard, entre outras funcionalidades que vao ser adicionada com o tempo. Site totalmente responsivo.
 
 ## Construido com:
+    NodeJS;
+    MySQL;
+    Chart.JS;
+    EJS;
+    CSS3;
+    Bootstrap;
 
 ## Bibliotecas
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chart.js": "^2.9.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.10"
+    
 
 ## Passo a Passo:
 
