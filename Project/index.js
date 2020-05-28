@@ -64,9 +64,7 @@
 
 // * router
 
-
     app.use('/', ControllerRouter)
-
 
 // * server
 const PORT = process.env.PORT || 8081

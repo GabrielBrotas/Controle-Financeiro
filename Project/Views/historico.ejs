@@ -9,7 +9,7 @@
         <div class="landing-text">
             <%- include ('partials/flashmsg.ejs') %>
 
-            <h2>Mês de <%= mesNome %></h2>
+            <h2>Registro Geral</h2>
             
             <span>R$ <%= total %></span>
             
@@ -29,47 +29,8 @@
 
 
 
+
     <div class="card-body">
-
-        <!-- form input -->
-        <form action='/adicionarItem' method="POST">
-            <div class="row">
-                <div class="col">
-                    <input name="valor" type="number" step="any" min="0" class="form-control" placeholder="Valor" required>
-                </div>
-                <div class="col">
-                    <input name="data" type="date" class="form-control" placeholder="Data" required>
-                </div>
-            </div>
-
-            <input name="descricao" type="text" class="form-control mt-2" placeholder="Descricao" required>
-
-            <div class="row mt-2">
-                <div class="col">
-                    <select name="tipo" class="custom-select" required>
-                        <option>Entrada</option>
-                        <option>Saida</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <button class="btn btn-info">Adicionar Item </button>
-                </div>
-            </div>
-            
-        </form>
-        <hr>
-
-        <!-- escolher mes -->
-        
-        <div class="container-mes mt-5" style="text-align: center;">
-            <h5>Filtro:</h5>
-            <form action="/month" onchange="changeValues(event, this)">
-                <input name="mesEscolhido" id="mesEscolhido"  value="<%= mes %>" type="month">
-            </form>
-            
-        </div>
-
-        
 
         <!-- table dos dados -->
         <div class="container-wrap mt-5 ">
@@ -91,7 +52,7 @@
                             
                             <% if(dado.tipo == 1) { %>
                                 <tr>
-                                    <td> <%= dado.data%> </td>
+                                    <td> <%= dado.data %> </td>
                                     <td> <%= dado.descricao%> </td>
                                     <td> <%= dado.valor %> </td>
                                     <td style="display: flex;">

@@ -10,6 +10,7 @@ const {isAuth} = require('./helpers/isAuth') // verificar se está autenticado
 const indexRouter = require('./classRouters/indexRouter')
 const usersRouter = require('./classRouters/usersRouter') 
 const itensRouter = require('./classRouters/itensRouter')
+const historicoRouter = require('./classRouters/historicoRouter')
 
 // rotas
     
@@ -42,9 +43,7 @@ const itensRouter = require('./classRouters/itensRouter')
         res.send('Em construção...')
     })
 
-    router.get('/historico', isAuth,(req, res) => {
-        res.send('Em construção...')
-    })
+    router.get('/historico', isAuth, historicoRouter.historico)
 
     router.get('/contact', (req, res) => {
         res.render('contact')
