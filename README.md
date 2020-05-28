@@ -82,8 +82,12 @@ Web app para controle e gestao de financas
      
 ## Imagens
 
+
+    #### Homepage (view mobile)
  ![Home](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/home.JPG)
 
+    #### Homepage pt2
  ![tabelas](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/home2.jpg)
  
+    #### dashboard
  ![dashboard](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/dashboard.JPG)
