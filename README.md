@@ -7,7 +7,9 @@ Web app para controle e gestao de financas
     inserindo ganhos e gastos do seu dia a dia e poder acompanhar seu historico, dashboard,
     entre outras funcionalidades que vao ser adicionada com o tempo de qualquer dispositivo.
     Site totalmente responsivo.
-
+    
+## Imagens
+ ![Home]()
 ## Construido com:
     NodeJS;
     MySQL;
