@@ -1,0 +1,107 @@
+<%- include ('partials/header.ejs') %>
+
+    <link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css">
+
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    
+    
+    
+    <div id='home'>
+        <div class="landing-text">
+            <%- include ('partials/flashmsg.ejs') %>
+
+            <h2>Dashboard Geral</h2>
+            
+            <span>R$ <%= total %></span>
+            
+            <div class="positivo-box">
+                <div class="positivo-texto">Entradas</div>
+                <div class="positivo-valor">+<span><%= entrada %></span></div>
+            </div>
+            
+            <div class="negativo-box">
+                <div class="negativo-texto">Saidas</div>
+                <div class="negativo-valor">-<span><%= saida %></span></div>
+                <div class="negativo-porcentagem"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="card-body">
+
+        <input type="hidden" id="entradasArray" value="<%= entradasArray %>">
+        <input type="hidden" id="saidasArray" value="<%= saidasArray %>">
+
+        <canvas id="myChart"></canvas>
+
+    </div>
+
+
+</body>
+
+
+    <script>
+        document.getElementById('teste').textContent = document.getElementById('entradasArray').value
+        document.getElementById('teste2').textContent = document.getElementById('saidasArray').value
+    </script>
+
+    <script src="/js/javascript.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    
+    <script>
+        // transformar os valores em string para um array
+        arrayEntradas = []
+        entradas = document.getElementById('entradasArray').value
+
+        arraySaidas = []
+        saidas = document.getElementById('saidasArray').value
+
+        for( let i = 0; i <= 11; i++){
+            arrayEntradas.push( entradas.split(',')[i])
+            arraySaidas.push( saidas.split(',')[i])
+        }
+
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun','Jul','Ago', 'Set','Out','Nov','Dez'],
+                    datasets: [
+                        {
+                        label: 'Saidas',
+                        data: arraySaidas,
+                        backgroundColor: 'transparent',
+                        borderColor: 'rgba(220, 53, 69, 0.9)',
+                        borderWidth: 3
+                    },
+                    {
+                        label: 'Entradas',
+                        data: arrayEntradas,
+                        backgroundColor: 'transparent',
+                        borderColor: 'rgba(23, 162, 184, 0.9)',
+                        borderWidth: 3
+                    }
+                ]
+                },
+            options:{
+                title:{
+                    display: true,
+                    fontSize: 20,
+                    text: 'Relatorio de 2020'
+                },
+                labels: {
+                    fontStyle: "bold"
+                }
+            }
+            })
+            
+    </script>
+
+
+<%- include ('partials/footer.ejs')  %>
+    

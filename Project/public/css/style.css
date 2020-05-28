@@ -59,7 +59,7 @@ body{
     color: white;
     font-size: 150%;
     font-weight: 450;
-    font-size: 25px;
+    font-size: 22px;
     
 }
 
@@ -67,8 +67,9 @@ body{
     align-self: center;
     flex-grow: 1;
     text-align: end;
-    padding-right: 20px;
+    padding-right: 18px;
     color: white;
+    font-size: 12px;
 
 }
 
@@ -103,3 +104,5 @@ body{
     padding-bottom: 25px;
     font-size: 15px;
 }
+
+

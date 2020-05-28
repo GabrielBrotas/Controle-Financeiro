@@ -11,6 +11,7 @@ const indexRouter = require('./classRouters/indexRouter')
 const usersRouter = require('./classRouters/usersRouter') 
 const itensRouter = require('./classRouters/itensRouter')
 const historicoRouter = require('./classRouters/historicoRouter')
+const dashboardRouter = require('./classRouters/dashboardRouter')
 
 // rotas
     
@@ -39,15 +40,10 @@ const historicoRouter = require('./classRouters/historicoRouter')
 
     router.post('/editarItem', itensRouter.editarItem) // editar item
 
-    router.get('/dashboard', isAuth, (req, res) => {
-        res.send('Em construção...')
-    })
+    router.get('/dashboard', isAuth, dashboardRouter.dashboardGeral)
 
     router.get('/historico', isAuth, historicoRouter.historico)
 
-    router.get('/contact', (req, res) => {
-        res.render('contact')
-    })
 
 
 module.exports = router
