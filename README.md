@@ -81,4 +81,9 @@ Web app para controle e gestao de financas
      MIT License
      
 ## Imagens
+
  ![Home](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/home.JPG)
+
+ ![tabelas](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/home2.jpg)
+ 
+ ![dashboard](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/dashboard.JPG)
