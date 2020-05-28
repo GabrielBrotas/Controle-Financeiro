@@ -1,9 +1,6 @@
 # Gestao Financeira
 Web app para controle e gestao de financas
 
-## Sumario
-    [Sobre](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/README.md#sobre-o-projeto)
-    
 ## Sobre o projeto
     Projeto desenvolvido para as pessoas terem maior controle financeiro.
     Neste applicativo o usuario cadastrado vai poder ter uma gestao maior do seu dinheiro,
