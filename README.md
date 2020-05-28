@@ -4,7 +4,11 @@ Web app para controle e gestao de financas
 ## Sumario
 
 ## Sobre o projeto
-    Projeto desenvolvido para as pessoas terem maior controle financeiro de qualquer lugar. Neste applicativo o usuario cadastrado vai poder inserir ganhos e gastos do seu dia a dia e poder acompanhar seu historico, dashboard, entre outras funcionalidades que vao ser adicionada com o tempo. Site totalmente responsivo.
+    Projeto desenvolvido para as pessoas terem maior controle financeiro.
+    Neste applicativo o usuario cadastrado vai poder ter uma gestao maior do seu dinheiro,
+    inserindo ganhos e gastos do seu dia a dia e poder acompanhar seu historico, dashboard,
+    entre outras funcionalidades que vao ser adicionada com o tempo de qualquer dispositivo.
+    Site totalmente responsivo.
 
 ## Construido com:
     NodeJS;
