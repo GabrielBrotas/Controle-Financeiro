@@ -1,47 +1,63 @@
-Etapas para a criação do Projeto
+# Control Finance Project
 
-1.0 - Front End, fazer o layout completo
-    1.1 - index view - OK
+imagem do projeto
 
-    1.2 - login view - OK
+## Sumario
 
-    1.3 - Register view - OK
+## Sobre o projeto
 
-2.0 - Criar banco de dados com relacionamento 1-n - OK
-    2.1 - table users - OK
-    2.2 - tables dados - OK
+## Construido com:
 
-3.0 - Função para regitrar novo usuario - OK
+## Bibliotecas
 
-4.0 - Adicionar item ao banco de dados ao clicar - OK
+## Passo a Passo:
 
-5.0 - Sessao de login e logout - OK
+    Etapas para a criação do Projeto
 
-6.0 - Mostrar itens de cada usuario - OK
-    6.1 - filtrar do mais novo para o mais antigo
+    1.0 - Front End, fazer o layout completo
+        1.1 - index view - OK
 
-7.0 - Flash messages - OK
+        1.2 - login view - OK
 
-8.0 - Botao Excluir item - OK
+        1.3 - Register view - OK
 
-9.0 - Botao Editar item - OK 
+    2.0 - Criar banco de dados com relacionamento 1-n - OK
+        2.1 - table users - OK
+        2.2 - tables dados - OK
 
-10.0 - Somar valores das entradas e saidas e colocar no layout nas respectivas box - OK
+    3.0 - Função para regitrar novo usuario - OK
 
-11.0 - Mostrar a relaçao entre as entradas e saidas na respectiva box - OK
+    4.0 - Adicionar item ao banco de dados ao clicar - OK
 
-12.0 - Filtro dos itens pelo mês - OK
+    5.0 - Sessao de login e logout - OK
 
-13.0 - Editar a navbar caso o usuario esteja logado ou nao - OK
+    6.0 - Mostrar itens de cada usuario - OK
+        6.1 - filtrar do mais novo para o mais antigo
 
-14.0 - Paginacao de itens 
+    7.0 - Flash messages - OK
 
-15.0 - Editar front end - fontes, imagens, etc.. 
+    8.0 - Botao Excluir item - OK
 
-16.0 - Paginha de contato para enviar email 
+    9.0 - Botao Editar item - OK 
 
-16.0 - Pagina de historico
+    10.0 - Somar valores das entradas e saidas e colocar no layout nas respectivas box - OK
 
-17.0 - Pagina de Dashboard
+    11.0 - Mostrar a relaçao entre as entradas e saidas na respectiva box - OK
 
-18.0 - revisar codigo e deixar o mais limpo possivel 
+    12.0 - Filtro dos itens pelo mês - OK
+
+    13.0 - Editar a navbar caso o usuario esteja logado ou nao - OK
+
+    14.0 - Editar front end - fontes, imagens, etc.. - OK
+
+    15.0 - Pagina de historico - OK
+
+    16.0 - Pagina de Dashboard - OK
+
+    17.0 - Paginacao de itens - Pendente
+
+## License
+     MIT License
+
+
+    
