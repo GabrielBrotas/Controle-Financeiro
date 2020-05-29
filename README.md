@@ -8,8 +8,6 @@ Web app para controle e gestao de financas
     entre outras funcionalidades que vao ser adicionada com o tempo de qualquer dispositivo.
     Site totalmente responsivo.
     
-## Imagens
- ![Home]()
 ## Construido com:
     NodeJS;
     MySQL;
@@ -81,3 +79,17 @@ Web app para controle e gestao de financas
 
 ## License
      MIT License
+     
+## Imagens
+
+
+#### Homepage (view mobile)
+ ![Home](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/home.JPG)
+
+
+#### Homepage pt2
+ ![tabelas](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/home2.jpg)
+ 
+ 
+#### dashboard
+ ![dashboard](https://github.com/GabrielBrotas/Controle-Financeiro/blob/master/Project/public/imagens/dashboard.JPG)
