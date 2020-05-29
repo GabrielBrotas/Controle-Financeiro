@@ -34,14 +34,15 @@ class indexRouter{
         Data.findAll( {
 
             where: { [Op.and]: [
+                // filtrar o sql pelo mes e ano
                  sequelize.where( sequelize.fn('month', sequelize.col('data')), mesArray[mes] ),
                  sequelize.where( sequelize.fn('year', sequelize.col('data')), ano),
-                 {userId: req.user.id}       
+                 {userId: req.user.id} // id do usuario       
                 ]},
             order: [['data', 'desc']]
             
         }).then( (dados) =>{
-
+            // valores iniciais
             var entrada = 0
             var saida = 0
             var total = 0
@@ -57,7 +58,9 @@ class indexRouter{
             })
             // diferenca entre entrada e esaida
             total = (entrada - saida).toFixed(2)
-
+            entrada = entrada.toFixed(2)
+            saida = saida.toFixed(2)
+            
             res.render('index', {dados, entrada, saida, total, ano_mes, mesNome})
 
         }).catch( (err) => {
