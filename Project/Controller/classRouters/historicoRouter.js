@@ -31,6 +31,8 @@ class historicoRouter{
             })
             // diferenca entre entrada e esaida
             total = (entrada - saida).toFixed(2)
+            entrada = entrada.toFixed(2)
+            saida = saida.toFixed(2)
 
             res.render('historico', {dados, entrada, saida, total})
 
