@@ -100,9 +100,12 @@ body{
 }
 
 #footer p{
-    padding-top: 25px;
-    padding-bottom: 25px;
     font-size: 15px;
 }
 
 
+.footer-text{
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+}
