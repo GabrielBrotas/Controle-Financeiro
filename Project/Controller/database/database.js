@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 
-const connection = new Sequelize('financecontrol', 'root', 'Gabriel22*/', {
+const connection = new Sequelize('financecontrol', 'root', '<sua senha>', {
     host: 'localhost',
     dialect: 'mysql',
     timezone: '-03:00'
